@@ -1,38 +1,72 @@
 <div class="container">
-  <form>
+  <form [formGroup]="signupForm">
     <h2 class="text-center">Create your account</h2>
 
     <!-- Name -->
     <div class="flex justify-between g-1">
       <div>
-        <label for="firstname">First name</label>
-        <input type="text" id="firstname" placeholder="First name:">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" placeholder="First name:" formControlName="firstName">
+
+        @if (signupForm.get('firstName')?.touched && signupForm.get('firstName')?.errors?.['required']) {
+          <p class="error-msg">First name is required.</p>
+        }
       </div>
       <div>
-        <label for="lastname">Last name</label>
-        <input type="text" id="lastname" placeholder="Last name:">
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" placeholder="Last name:" formControlName="lastName">
+        @if (signupForm.get('lastName')?.touched && signupForm.get('lastName')?.errors?.['required']) {
+          <p class="error-msg">Last name is required.</p>
+        }
       </div>
     </div>
     <!-- Username -->
     <div>
       <label for="username" class="">Username:</label>
-      <input type="username" id="username" placeholder="Username:">
+      <input type="username" id="username" placeholder="Username:" formControlName="username">
+      @if (signupForm.get('username')?.touched && signupForm.get('username')?.errors?.['required']) {
+        <p class="error-msg">Username is required.</p>
+      }
     </div>
 
 
     <!-- Email -->
     <div>
       <label for="email" class="">Email:</label>
-      <input type="email" id="email" placeholder="Email:">
+      <input type="email" id="email" placeholder="Email:" formControlName="email">
+      @if (signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['required']) {
+        <p class="error-msg">Email is required.</p>
+      }
+      @if (signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['email']) {
+        <p class="error-msg"> Please enter a valid email address.</p>
+      }
     </div>
 
     <!-- Password -->
     <div>
       <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="Password:">
+      <input type="password" id="password" placeholder="Password:" formControlName="password">
+      @if (signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['required']) {
+        <p class="error-msg">Password is required.</p>
+      }
+      @if (signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']) {
+        <p class="error-msg">Password must be at least 8 characters long.</p>
+      }
+      @if (signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['maxlength']) {
+        <p class="error-msg">Password cannot exceed 64 characters.</p>
+      }
     </div>
 
-    <button type="submit" class="btn btn-primary">Signup</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="signupForm.invalid">Signup</button>
+
+    <div class="text-center">
+      @if (successMessage) {
+        <p class="success-msg">{{ successMessage }}</p>
+      }
+      @if (errorMessage) {
+        <p class="error-msg">{{ errorMessage }}</p>
+      }
+    </div>
 
     <div>
       <p class="text-center">Already have an account? <a href="">Login</a></p>

@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BaseEntity<T extends Serializable> {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private T id;
+    private Long id;
 
     @Column(name = "created_at",nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)

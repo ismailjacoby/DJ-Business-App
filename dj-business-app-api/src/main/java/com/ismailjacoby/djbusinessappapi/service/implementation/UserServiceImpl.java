@@ -5,6 +5,7 @@ import com.ismailjacoby.djbusinessappapi.form.SignupForm;
 import com.ismailjacoby.djbusinessappapi.model.entity.User;
 import com.ismailjacoby.djbusinessappapi.repository.UserRepository;
 import com.ismailjacoby.djbusinessappapi.service.UserService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
+        this.passwordEncoder = new BCryptPasswordEncoder();
     }
 
     @Override

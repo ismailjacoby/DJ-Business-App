@@ -1,10 +1,13 @@
 package com.ismailjacoby.djbusinessappapi.dto;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
 public class ErrorResponseDTO {
     private String message;
     private Map<String, String> details = new HashMap<>();

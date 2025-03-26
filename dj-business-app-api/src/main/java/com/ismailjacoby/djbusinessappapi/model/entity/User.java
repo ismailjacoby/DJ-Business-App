@@ -15,18 +15,19 @@ import java.util.Set;
 
 @Entity
 @Getter @Setter
-public class User extends BaseEntity<Long> implements UserDetails {
+@Table(name = "user_")
+public class User extends BaseEntity implements UserDetails {
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "username", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
-    @Column(name = "username", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     private String password;
@@ -60,9 +61,6 @@ public class User extends BaseEntity<Long> implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.DJ;
-
-    @Column(name = "profile_picture", nullable = true)
-    private String profilePicture;
 
     private boolean active = true;
     private boolean premium = false;

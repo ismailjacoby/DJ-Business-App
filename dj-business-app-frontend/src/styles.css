@@ -7,6 +7,7 @@
   --light: #ffffff; /* White */
   --success: #22BB33; /* Success Green */
   --error: #ff3333; /* Error Red */
+  --navbar-height: 75px; /* Height of the Navbar */
 }
 
 /* Global Styles */
@@ -23,6 +24,16 @@ html {
 body {
   font-family: 'Monsterrat', sans-serif;
   line-height: 1.5;
+}
+
+a{
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 /* Utility */
@@ -46,10 +57,13 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .items-center {
   align-items: center;
 }
-
 
 /* Custom Font Import */
 @font-face {
@@ -104,8 +118,17 @@ h2, h3{
   font-weight: 600;
 }
 
+p, input, label, button, textarea{
+  font-family: Monsterrat;
+  font-weight: 400;
+}
+
 /* Basic Layout */
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--navbar-height));
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -232,4 +255,71 @@ textarea {
 .success-msg {
   color: var(--success);
   font-size: 0.875rem;
+}
+
+
+/* Margin utilities */
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Gap Utilities */
+.g-1{
+  gap: 1rem;
 }

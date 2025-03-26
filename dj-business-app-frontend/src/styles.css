@@ -1,1 +1,234 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Monsterrat', sans-serif;
+  line-height: 1.5;
+}
+
+/* Utility */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* Colors */
+:root {
+  --primary-color: #6681e8; /* Blue - accent color */
+  --dark: #212328; /* Dark color */
+  --gray: #82878c; /* Gray */
+  --light-gray: #eaeaea; /* Lighter Gray */
+  --light: #ffffff; /* White */
+  --success: #22BB33; /* Success Green */
+  --error: #ff3333; /* Error Red */
+}
+
+/* Custom Font Import */
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 100;
+  src:  url("../public/fonts/Montserrat-Thin.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 300;
+  src:  url("../public/fonts/Montserrat-Light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 400;
+  src:  url("../public/fonts/Montserrat-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 500;
+  src:  url("../public/fonts/Montserrat-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 600;
+  src:  url("../public/fonts/Montserrat-SemiBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 700;
+  src:  url("../public/fonts/Montserrat-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Monsterrat';
+  font-weight: 900;
+  src:  url("../public/fonts/Montserrat-Black.ttf") format('truetype');
+}
+
+h1{
+  font-family: 'Monsterrat';
+  font-weight: 700;
+}
+
+h2, h3{
+  font-family: 'Monsterrat';
+  font-weight: 600;
+}
+
+/* Basic Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+/* Disabled button */
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--gray);
+  color: var(--light);
+  opacity: 0.5;
+}
+
+/* Primary Button - Blue */
+.btn-primary {
+  color: var(--light);
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #4e6bc1;
+}
+
+.btn-primary:active {
+  background-color: #3e549c;
+}
+
+/* Secondary Button - Dark */
+.btn-secondary {
+  color: var(--light);
+  background-color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  color: var(--dark);
+  background-color: var(--light);
+  border-color: var(--light-gray);
+}
+
+/* Tertiary Button - Light*/
+.btn-tertiary {
+  color: var(--dark);
+  background-color: var(--light);
+  transition: all 0.3s ease;
+  border-color: var(--light-gray);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--dark);
+  color: var(--light);
+  border-color: var(--dark);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input, Select, Textarea Styles */
+input, select, textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  font-size: 1rem;
+  color: var(--dark);
+  background-color: var(--light);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Input/Select/Textarea Focus Styles */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 129, 232, 0.5);
+}
+
+/* Disabled inputs */
+input:disabled, select:disabled, textarea:disabled {
+  cursor: not-allowed;
+  background-color: var(--light-gray);
+  color: var(--dark);
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Error & Success Message */
+.error-msg {
+  color: var(--error);
+  font-size: 0.875rem;
+}
+
+.success-msg {
+  color: var(--success);
+  font-size: 0.875rem;
+}

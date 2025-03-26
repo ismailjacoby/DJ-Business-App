@@ -1,3 +1,14 @@
+/* Colors */
+:root {
+  --primary-color: #6681e8; /* Blue - accent color */
+  --dark: #212328; /* Dark color */
+  --gray: #82878c; /* Gray */
+  --light-gray: #eaeaea; /* Lighter Gray */
+  --light: #ffffff; /* White */
+  --success: #22BB33; /* Success Green */
+  --error: #ff3333; /* Error Red */
+}
+
 /* Global Styles */
 * {
   margin: 0;
@@ -39,16 +50,6 @@ body {
   align-items: center;
 }
 
-/* Colors */
-:root {
-  --primary-color: #6681e8; /* Blue - accent color */
-  --dark: #212328; /* Dark color */
-  --gray: #82878c; /* Gray */
-  --light-gray: #eaeaea; /* Lighter Gray */
-  --light: #ffffff; /* White */
-  --success: #22BB33; /* Success Green */
-  --error: #ff3333; /* Error Red */
-}
 
 /* Custom Font Import */
 @font-face {

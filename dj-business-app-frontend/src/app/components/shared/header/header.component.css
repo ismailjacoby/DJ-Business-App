@@ -1,0 +1,155 @@
+/* Icon Margin */
+i{
+  margin-right: 10px;
+}
+
+/* Navbar */
+.navbar{
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--light);
+  white-space: nowrap;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-button{
+
+}
+
+/* Nav Links */
+.nav-item{
+  padding: 10px;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.nav-item:hover{
+  background-color: var(--light-gray);
+  color: var(--dark);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.active-link {
+  background-color: var(--light-gray) ;
+  color: var(--dark);
+  border-radius: 8px;
+}
+
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--light);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  text-align: left;
+  color: var(--dark);
+}
+
+
+.dropdown-menu li:hover {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-container:hover .dropdown-menu {
+  display: block;
+}
+
+@media(max-width: 900px){
+  .link-icon{
+    display: none;
+  }
+}
+
+@media(max-width: 768px){
+  .nav-links, .nav-button{
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+}
+
+@media(min-width: 768px){
+  .hamburger-icon{
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  padding: 15px;
+  color: var(--light);
+  cursor: pointer;
+}
+
+.mobile-menu li:hover {
+  background-color: var(--light-gray);
+  color: var(--dark);
+  border-radius: 8px;
+}
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
+.hamburger-icon i {
+  font-size: 1.5rem;
+}
+

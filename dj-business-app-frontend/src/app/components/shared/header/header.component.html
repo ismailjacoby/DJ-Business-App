@@ -1,1 +1,51 @@
-<p>Header works!</p>
+<header class="navbar">
+    <div>
+        <h1>Logo</h1>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li class="nav-item" routerLink=""><i class="fa-solid fa-gauge-simple-high link-icon"></i>Dashboard</li>
+            <li class="nav-item" routerLink=""><i class="fa-solid fa-calendar-days link-icon"></i>Bookings</li>
+            <li class="nav-item" routerLink=""><i class="fa-solid fa-coins link-icon"></i>Finance</li>
+            <li class="nav-item" routerLink=""><i class="fa-solid fa-building link-icon"></i>Clients/Venues</li>
+            <li class="nav-item" routerLink=""><i class="fa-solid fa-lightbulb link-icon"></i>Blog</li>
+        </ul>
+    </nav>
+
+    <div class="nav-button">
+        @if (!isLoggedIn) {
+            <button class="btn btn-primary" (click)="login()"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN
+            </button>
+        } @else {
+            <div class="profile-container">
+                <img class="profile-pic" src="/placeholders/profile-picture.png" alt="Profile Picture">
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><i class="fa-solid fa-pen-to-square"></i>Edit Account</li>
+                        <li><i class="fa-solid fa-users"></i>Manage Users</li>
+                        <li (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="hamburger-icon">
+        <i [ngClass]="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" (click)="toggleMenu()"></i>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+@if (isMenuOpen) {
+    <div class="mobile-menu">
+        <ul>
+            <li><i class="fa-solid fa-gauge-simple-high"></i>Dashboard</li>
+            <li><i class="fa-solid fa-calendar-days"></i>Bookings</li>
+            <li><i class="fa-solid fa-coins"></i>Finance</li>
+            <li><i class="fa-solid fa-building"></i>Clients/Venues</li>
+            <li><i class="fa-solid fa-lightbulb"></i>Blog</li>
+            <li (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</li>
+        </ul>
+    </div>
+}

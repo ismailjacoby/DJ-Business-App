@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/dj-business-app.iml" filepath="$PROJECT_DIR$/.idea/dj-business-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dj-business-app-api/dj-business-app-api.iml" filepath="$PROJECT_DIR$/dj-business-app-api/dj-business-app-api.iml" />
     </modules>
   </component>
 </project>

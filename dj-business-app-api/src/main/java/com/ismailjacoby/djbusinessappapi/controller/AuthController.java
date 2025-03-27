@@ -1,5 +1,7 @@
 package com.ismailjacoby.djbusinessappapi.controller;
 
+import com.ismailjacoby.djbusinessappapi.dto.AuthDTO;
+import com.ismailjacoby.djbusinessappapi.form.LoginForm;
 import com.ismailjacoby.djbusinessappapi.form.SignupForm;
 import com.ismailjacoby.djbusinessappapi.service.UserService;
 import jakarta.validation.Valid;
@@ -29,5 +31,10 @@ public class AuthController {
         Map<String, String> response = new HashMap<>();
         response.put("message", "User registered successfully.");
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public AuthDTO login(@RequestBody @Valid LoginForm form){
+        return userService.login(form);
     }
 }

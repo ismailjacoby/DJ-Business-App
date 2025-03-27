@@ -43,4 +43,11 @@ public class GlobalExceptionHandler {
     public ErrorResponseDTO handleDuplicateResourceException(DuplicateException ex) {
         return new ErrorResponseDTO("Duplicate resource detected", Map.of("error", ex.getMessage()));
     }
+
+    // InvalidCredentialsException
+    @ExceptionHandler(InvalidCredentialsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ErrorResponseDTO handleInvalidCredentialsException(InvalidCredentialsException ex) {
+        return new ErrorResponseDTO("Authentication failed", Map.of("error", ex.getMessage()));
+    }
 }

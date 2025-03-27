@@ -1,0 +1,47 @@
+<div class="container flex justify-center items-center">
+  <form [formGroup]="loginForm">
+    <h2 class="text-center">Login</h2>
+
+    <!-- Username -->
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Username:" formControlName="username">
+
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']) {
+        <p class="error-msg">Username is required.</p>
+      }
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['minlength']) {
+        <p class="error-msg">Username must be at least 3 characters long.</p>
+      }
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['maxlength']) {
+        <p class="error-msg">Username cannot exceed 20 characters.</p>
+      }
+    </div>
+
+    <!-- Password -->
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Password:" formControlName="password">
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']) {
+        <p class="error-msg">Password is required.</p>
+      }
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']) {
+        <p class="error-msg">Password must be at least 8 characters long.</p>
+      }
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['maxlength']) {
+        <p class="error-msg">Password cannot exceed 64 characters.</p>
+      }
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+
+    @if (errorMessage) {
+      <p class="error-msg text-center">{{ errorMessage }}</p>
+    }
+
+    <div>
+      <p class="text-center">No account? <a routerLink="../signup">Sign Up</a></p>
+      <p class="text-center"><a href="">Forgot password?</a></p>
+    </div>
+  </form>
+</div>

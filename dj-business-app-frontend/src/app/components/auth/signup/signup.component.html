@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container flex justify-center items-center">
   <form [formGroup]="signupForm">
     <h2 class="text-center">Create your account</h2>
 
@@ -57,7 +57,7 @@
       }
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="signupForm.invalid">Signup</button>
+    <button type="submit" class="btn btn-primary" (click)="signup()" [disabled]="signupForm.invalid">Signup</button>
 
     <div class="text-center">
       @if (successMessage) {
@@ -69,7 +69,7 @@
     </div>
 
     <div>
-      <p class="text-center">Already have an account? <a href="">Login</a></p>
+      <p class="text-center">Already have an account? <a routerLink="../login">Login</a></p>
     </div>
   </form>
 </div>

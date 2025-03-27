@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../service/auth.service';
 import {HttpClient} from '@angular/common/http';
+import {Router, RouterLink} from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,8 @@ import {HttpClient} from '@angular/common/http';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
@@ -23,7 +25,8 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -36,7 +39,7 @@ export class SignupComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  signup() {
     if (this.signupForm.invalid) {
       this.errorMessage = "Please fill in all required fields.";
       return;
@@ -47,6 +50,7 @@ export class SignupComponent implements OnInit {
         this.errorMessage = '';
         this.successMessage = data?.message  || "User registered successfully.";
         this.signupForm.reset();
+        this.router.navigate(['/auth/login'])
       }, error => {
         this.successMessage = '';
         this.errorMessage = error?.error?.message || "An error occurred while registering."

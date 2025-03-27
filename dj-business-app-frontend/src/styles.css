@@ -53,6 +53,10 @@ a:hover{
   flex-direction: row;
 }
 
+.flex-end{
+  flex-direction: row-reverse;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -125,9 +129,6 @@ p, input, label, button, textarea{
 
 /* Basic Layout */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: calc(100vh - var(--navbar-height));
   width: 100%;
   max-width: 1200px;
@@ -174,8 +175,8 @@ p, input, label, button, textarea{
 }
 
 .btn-secondary:hover {
-  color: var(--dark);
-  background-color: var(--light);
+  color: var(--light);
+  background-color: var(--primary-color);
   border-color: var(--light-gray);
 }
 

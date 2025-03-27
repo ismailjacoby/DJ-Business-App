@@ -1,0 +1,108 @@
+h2{
+  color: var(--dark);
+}
+
+/* Stats */
+
+.filters{
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+/* Individual Card */
+.stat-card {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.stat-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* Hover Effect */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bookings of the Week */
+
+.bookings {
+  margin-top: 2rem;
+  background-color: var(--light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookings h2 {
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bookings table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.bookings th, .bookings td {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.bookings th {
+  background-color: var(--dark);
+  color: var(--light);
+  font-weight: 500;
+}
+
+.bookings tr:hover {
+  background-color: var(--light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Quick Actions */
+
+.quick-actions{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.actions{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}

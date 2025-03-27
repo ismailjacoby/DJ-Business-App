@@ -325,3 +325,10 @@ textarea {
 .g-1{
   gap: 1rem;
 }
+
+footer {
+  height: auto;
+
+  background-color: black;
+}
+
